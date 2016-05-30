@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>晚上吃啥</title>
+    <style media="screen">
+      .container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        margin: 200px auto;
+        background-color: #28bb63;
+        border-radius: 50%;
+        overflow: hidden;
+        transition: transform 2s;
+      }
+      .dinner {
+        position: absolute;
+        background-color: #34378c;
+        color: #fff;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      .dinner:nth-of-type(2) {
+        background-color: #9a3e3e;
+      }
+      .dinner:nth-of-type(3) {
+        background-color: #349634;
+      }
+      .dinner .text {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+        transform-origin: center;
+      }
+      .dinner .text .fix {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container"></div>
+    <script type="text/javascript" src="./lib/WTFDinner.js"></script>
+    <script type="text/javascript">
+      var dinner = new WTFDinner({
+        container: document.querySelector('#container'),
+        dinners: ['鸭血粉丝', '粉面书生', '冒菜', '小两口', '重庆小面']
+      });
+      dinner.giveMeDinner();
+    </script>
+  </body>
+</html>

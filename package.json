@@ -1,0 +1,24 @@
+{
+  "name": "whereisthefuckdinner",
+  "version": "0.0.1",
+  "description": "大型开源晚上吃啥系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jiasm/whereisthefuckdinner.git"
+  },
+  "keywords": [
+    "dinner",
+    "饭",
+    "选择苦难症"
+  ],
+  "author": "jiasm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jiasm/whereisthefuckdinner/issues"
+  },
+  "homepage": "https://github.com/Jiasm/whereisthefuckdinner#readme"
+}
