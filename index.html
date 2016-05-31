@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>晚上吃啥</title>
     <style media="screen">
       .container {
@@ -12,7 +13,7 @@
         background-color: #28bb63;
         border-radius: 50%;
         overflow: hidden;
-        transition: transform 2s;
+        z-index: 2;
       }
       .dinner {
         position: absolute;
@@ -33,6 +34,8 @@
         position: absolute;
         height: 100%;
         width: 100%;
+        left: 0;
+        top: 0;
         text-align: center;
         font-size: 24px;
         transform-origin: center;
@@ -46,14 +49,33 @@
     </style>
   </head>
   <body>
+    <button type="button" name="button" id="dinner">一天就这一次机会</button>
+    <button onclick="cleanData()">
+			清除数据
+		</button>
     <div class="container" id="container"></div>
     <script type="text/javascript" src="./lib/WTFDinner.js"></script>
     <script type="text/javascript">
       var dinner = new WTFDinner({
         container: document.querySelector('#container'),
-        dinners: ['鸭血粉丝', '粉面书生', '冒菜', '小两口', '重庆小面']
+        dinners: ['多一道', '小两口', '鸭血粉丝', '重庆小面', '粉面书生'],
+        callback: function () {
+          alert('今儿晚上吃：' + dinner.getDinner());
+        }
       });
-      dinner.giveMeDinner();
+      document.querySelector('#dinner').addEventListener('click', function () {
+
+        if (dinner.canIEat()) {
+          dinner.giveMeDinner();
+        } else {
+          alert('今天已经抽过了：' + dinner.getDinner());
+        }
+
+      });
+
+      function cleanData () {
+      	dinner.cleanData();
+      }
     </script>
   </body>
 </html>
