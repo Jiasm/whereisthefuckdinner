@@ -2,8 +2,9 @@
   "name": "whereisthefuckdinner",
   "version": "0.0.1",
   "description": "大型开源晚上吃啥系统",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "supervisor server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/Jiasm/whereisthefuckdinner/issues"
   },
-  "homepage": "https://github.com/Jiasm/whereisthefuckdinner#readme"
+  "homepage": "https://github.com/Jiasm/whereisthefuckdinner#readme",
+  "devDependencies": {
+    "koa": "^1.2.0",
+    "koa-router": "^5.4.0",
+    "koa-static": "^2.0.0",
+    "koa-views": "^4.1.0",
+    "supervisor": "^0.10.0"
+  }
 }
